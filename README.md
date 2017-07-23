@@ -23,9 +23,9 @@
 * The alarm sound is heard for five seconds.
 * The notification is seen for five seconds. If you click on it, it will hide.
 
-## How to install
+## How to try this extension
 
-This extension is not in the Chrome Web Store.
+This extension is not in the Chrome Web Store, but you can try it.
 
 * [Download package](https://github.com/lmfresneda/chrome-ext-clock-alarm/archive/master.zip) and decompress it.
 * In Google Chrome, go to `chrome://extensions/` page and check `Developer mode`:
@@ -42,13 +42,13 @@ This extension is not in the Chrome Web Store.
 ![Icon toolbar](img/install3.png)
 
 
-## First time
+## Security
 
-For the first time when we open new tab, the next question is shown:
+For our security, Chrome asks us if we want to use this extension, because it's loaded by developed mode:
 
 ![Question for the first time](img/install4.png)
 
-Press `Keep changes` button, if we want to use this extension, obviously.
+Press `Keep changes` button, if we want to try this extension, obviously.
 
 
-NOTE: This extension does not require special permissions
+NOTE: This extension does not require special permissions (only notifications, but no is absolutely necessary).
