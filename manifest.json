@@ -1,0 +1,28 @@
+{
+  "name": "__MSG_extName__",
+  "version": "1.0",
+  "version_name": "1.0",
+  "manifest_version": 2,
+  "icons": { 
+    "32": "img/icon32.png" ,
+    "48": "img/icon48.png" ,
+    "128": "img/icon128.png" 
+  },
+  "default_locale" : "en",
+  "offline_enabled": true,
+  "description": "__MSG_extDesc__",
+  "browser_action": {
+    "default_title": "__MSG_extName__",
+    "default_popup": "popup.html",
+    "default_icon": { 
+      "16": "img/icon16.png",
+      "24": "img/icon24.png",
+      "32": "img/icon32.png"
+    }
+  },
+  "chrome_url_overrides" : {
+    "newtab": "index.html"
+  },
+  "optional_permissions": [ "notifications" ],
+  "homepage_url": "https://lmfresneda.github.io"
+}

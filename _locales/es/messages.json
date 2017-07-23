@@ -1,0 +1,49 @@
+{
+	"extName" : {
+        "message": "Reloj y alarmas",
+        "description": "Nombre"
+    },
+	"extDesc" : {
+        "message": "Visualiza un reloj grande y puede definir alarmas",
+        "description": "Descripción"
+    },
+    "title_alarm" : {
+        "message": "Eliminar alarma"
+    },
+    "title": {
+    	"message": "Reloj y alarmas"
+    },
+	"configuration": {
+		"message": "Configuración"
+	},
+	"close": {
+		"message": "Cerrar"
+	},
+	"hour": {
+		"message": "Hora"
+	},
+	"minutes": {
+		"message": "Minutos"
+	},
+	"config_new_alarm": {
+		"message": "Configurar nueva alarma"
+	},
+	"save_new_alarm": {
+		"message": "Guardar nueva alarma"
+	},
+	"configured_alarms": {
+		"message": "Alarmas configuradas"
+	},
+	"error_save_alarm": {
+		"message": "Indique hora y minutos"
+	},
+	"text_sound_alarm": {
+		"message": "Escuchar alarma"
+	},
+	"title_alarm": {
+		"message": "¡Alarma, alarma!"
+	},
+	"text_alarm": {
+		"message": "La alarma configurada para las $1 ha saltado"
+	}
+}

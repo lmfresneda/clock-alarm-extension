@@ -1,0 +1,156 @@
+body{
+	background-color: #008348;
+	margin: 0px;
+	padding: 0px;
+	color: #E2E2E2;
+}
+
+#alarm-config{
+	width: 300px;
+	height: 100%;
+	position: fixed;
+	margin: 0px;
+	background-color: #ffdbae;
+	left: -350px;
+	color: #2D2D2D;
+	font-size: 1rem;
+	z-index: 999;
+	box-shadow: 1px 3px 10px 0px black;
+}
+#close-config{
+	float: right;
+	cursor: pointer;
+	font-weight: bold;
+	margin-right: 5px;
+}
+#open-config{
+	position: fixed;
+    top: 10px;
+    left: 10px;
+    opacity: .7;
+    cursor: pointer;
+}
+#open-config:hover{
+	opacity: 1;
+}
+
+input[name=send-alarm]{
+	background-color: transparent;
+    border: 2px solid #ff7600;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+input[name=send-alarm]:hover{
+	background-color: #ff7600;
+	color: white;
+}
+#new-alarm{
+	text-align: center;
+    border: 1px solid #686868;
+    margin: 10px;
+    padding: 10px;
+}
+.inputs, .alarms{
+    margin: 5px 10px;
+}
+.inputs > p, .alarms > p{
+	font-size: 1.2rem;
+}
+
+#clock, #date{
+	text-align: center;
+}
+#clock{
+	font-size: 30rem;
+}
+#date{
+	font-size: 5rem;
+}
+
+.alarm{
+	cursor: pointer;
+    border: 1px solid #ff7600;
+    border-radius: 2px;
+    padding: 3px;
+    margin: 2px 4px;
+}
+.alarm:hover{
+	background-color: #ff7600;
+	color: white;
+}
+
+#error-form-config{
+	display: none;
+	color: #FF3800;
+}
+
+#test-alarm{
+	position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background-color: transparent;
+    border: 1px solid #383838;
+    border-radius: 2px;
+    padding: 5px;
+    font-size: .7rem;
+    color: #383838;
+    cursor: pointer;
+}
+#test-alarm:hover{
+	color: #D8D8D8;
+	background-color: #383838;
+}
+
+.credits{
+	position: fixed;
+	bottom: 5px;
+	right: 10px;
+    font-size: .7rem;
+}
+.credits a{
+    color: #E2E2E2;
+}
+.credits i{
+    font-size: 1rem;
+    vertical-align: sub;
+}
+
+/* switch */
+.onoffswitch {
+    position: relative; width: 60px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    height: 18px; padding: 0; line-height: 18px;
+    border: 0px solid #FFFFFF; border-radius: 26px;
+    background-color: #FC7474;
+}
+.onoffswitch-label:before {
+    content: "";
+    display: block; width: 26px; margin: -4px;
+    background: #C24B4B;
+    position: absolute; top: 0; bottom: 0;
+    right: 38px;
+    border-radius: 26px;
+    box-shadow: 0 6px 12px 0px #757575;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+    background-color: #43F743;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label, .onoffswitch-checkbox:checked + .onoffswitch-label:before {
+   border-color: #43F743;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label:before {
+    right: 0px; 
+    background-color: #00BD36; 
+    box-shadow: 3px 6px 18px 0px rgba(0, 0, 0, 0.2);
+}

@@ -1,0 +1,49 @@
+{
+	"extName" : {
+        "message": "Alarms & Clock",
+        "description": "Extension name"
+    },
+	"extDesc" : {
+        "message": "Displays a large clock and can set alarms",
+        "description": "Extension description"
+    },
+    "title_alarm" : {
+        "message": "Remove alarm"
+    },
+    "title": {
+    	"message": "Alarms & Clock"
+    },
+	"configuration": {
+		"message": "Configuration"
+	},
+	"close": {
+		"message": "Close"
+	},
+	"hour": {
+		"message": "Hour"
+	},
+	"minutes": {
+		"message": "Minutes"
+	},
+	"save_new_alarm": {
+		"message": "Save new alarm"
+	},
+	"config_new_alarm": {
+		"message": "Config new alarm"
+	},
+	"configured_alarms": {
+		"message": "Configured Alarms"
+	},
+	"error_save_alarm": {
+		"message": "Enter hour and minutes"
+	},
+	"text_sound_alarm": {
+		"message": "Listen to alarm"
+	},
+	"title_alarm": {
+		"message": "Alarm, alarm!"
+	},
+	"text_alarm": {
+		"message": "The alarm set at $1 has been fired"
+	}
+}
