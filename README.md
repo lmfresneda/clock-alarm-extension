@@ -25,12 +25,12 @@
 
 ## How to install
 
+This extension is not in the Chrome Web Store.
+
 * [Download package](https://github.com/lmfresneda/chrome-ext-clock-alarm/archive/master.zip) and decompress it.
 * In Google Chrome, go to `chrome://extensions/` page and check `Developer mode`:
 
 ![Developer mode check](img/install1.png)
-
-This extension is not in the Chrome Web Store.
 
 * Press button `Load unpacked extension` and select uncompressed folder extension.
 * The extension is now visible in list:
