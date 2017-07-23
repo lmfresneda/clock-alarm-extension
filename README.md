@@ -44,7 +44,7 @@ This extension is not in the Chrome Web Store, but you can try it.
 
 ## Security
 
-For our security, Chrome asks us if we want to use this extension, because it's loaded by developed mode:
+For our security, Chrome asks us if we want to use this extension, because it's loaded by developer mode:
 
 ![Question for the first time](img/install4.png)
 
