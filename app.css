@@ -37,23 +37,30 @@ body{
 	opacity: 1;
 }
 
-input[name=send-alarm]{
-	background-color: transparent;
-    border: 2px solid #ff7600;
-    border-radius: 3px;
-    padding: 5px;
-    margin: 5px;
-    cursor: pointer;
-}
-input[name=send-alarm]:hover{
-	background-color: #ff7600;
-	color: white;
-}
 #new-alarm{
 	text-align: center;
     border: 1px solid #686868;
     margin: 10px;
     padding: 10px;
+}
+input[name=send-alarm]{
+    background-color: transparent;
+    border: 2px solid #ff7600;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 20px;
+    cursor: pointer;
+}
+input[name=send-alarm]:hover{
+    background-color: #ff7600;
+    color: white;
+}
+#new-alarm select{
+    border: 1px solid #ff7600;
+    background-color: transparent;
+    border-radius: 3px;
+    padding: 5px;
+    cursor: pointer;
 }
 .inputs, .alarms{
     margin: 5px 10px;
@@ -62,6 +69,11 @@ input[name=send-alarm]:hover{
 	font-size: 1.2rem;
 }
 
+#info-page{
+    position: absolute;
+    width: 100%;
+    top: 10%;
+}
 #clock, #date{
 	text-align: center;
 }
@@ -118,6 +130,7 @@ input[name=send-alarm]:hover{
 .credits i{
     font-size: 1rem;
     vertical-align: sub;
+    font-style: normal;
 }
 
 /* switch */
