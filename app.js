@@ -205,7 +205,7 @@ function sendNotification(text){
 		var noti = new Notification(
 		  chrome.i18n.getMessage('title_alarm'), 
 		  {
-	      icon: 'img/icon64.png',
+	      icon: 'res/img/icon64.png',
 	      body: chrome.i18n.getMessage('text_alarm', [text]),
     });
     noti.onclick = function(){

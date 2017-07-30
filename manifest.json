@@ -3,9 +3,9 @@
   "version": "1.0",
   "manifest_version": 2,
   "icons": { 
-    "32": "img/icon32.png" ,
-    "48": "img/icon48.png" ,
-    "128": "img/icon128.png" 
+    "32": "res/img/icon32.png" ,
+    "48": "res/img/icon48.png" ,
+    "128": "res/img/icon128.png" 
   },
   "default_locale" : "en",
   "description": "__MSG_extDesc__",
@@ -13,14 +13,14 @@
     "default_title": "__MSG_extName__",
     "default_popup": "popup.html",
     "default_icon": { 
-      "16": "img/icon16.png",
-      "24": "img/icon24.png",
-      "32": "img/icon32.png"
+      "16": "res/img/icon16.png", 
+      "24": "res/img/icon24.png",
+      "32": "res/img/icon32.png"
     }
   },
   "chrome_url_overrides" : {
     "newtab": "index.html"
   },
   "optional_permissions": [ "notifications" ],
-  "homepage_url": "https://github.com/lmfresneda/chrome-ext-clock-alarm"
+  "homepage_url": "https://github.com/lmfresneda/clock-alarm-extension"
 }
