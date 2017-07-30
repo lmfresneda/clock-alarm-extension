@@ -81,7 +81,7 @@ printAllAlarms();
 
 // pinta una nueva alarma en el config
 function printNewAlarmConfig(alarm){
-	$alarms.append(`<span class='alarm' title="${chrome.i18n.getMessage('title_alarm')}">${alarm}</span>`)
+	$alarms.append(`<span class='alarm' title="${chrome.i18n.getMessage('title_alarm_remove')}">${alarm}</span>`)
 }
 
 // guarda una nueva alarma

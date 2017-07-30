@@ -7,7 +7,7 @@
         "message": "Visualiza un reloj grande y puede definir alarmas",
         "description": "Descripción"
     },
-    "title_alarm" : {
+    "title_alarm_remove" : {
         "message": "Eliminar alarma"
     },
     "title": {

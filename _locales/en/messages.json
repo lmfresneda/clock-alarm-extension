@@ -7,7 +7,7 @@
         "message": "Displays a large clock and can set alarms",
         "description": "Extension description"
     },
-    "title_alarm" : {
+    "title_alarm_remove" : {
         "message": "Remove alarm"
     },
     "title": {
