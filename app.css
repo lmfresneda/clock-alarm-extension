@@ -66,10 +66,10 @@ input[name=send-alarm]:hover{
 	text-align: center;
 }
 #clock{
-	font-size: 30rem;
+	font-size: 23vw;
 }
 #date{
-	font-size: 5rem;
+	font-size: 6vw;
 }
 
 .alarm{
