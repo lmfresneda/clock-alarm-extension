@@ -8,7 +8,6 @@
     "128": "img/icon128.png" 
   },
   "default_locale" : "en",
-  "offline_enabled": true,
   "description": "__MSG_extDesc__",
   "browser_action": {
     "default_title": "__MSG_extName__",
