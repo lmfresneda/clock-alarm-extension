@@ -1,4 +1,4 @@
-# Google Chrome and Firefox extension
+# Firefox and Google Chrome and extension
 
 ## Displays a large clock in default new tab and can set alarms (with sound, if you want)
 
@@ -25,9 +25,15 @@
 
 ## How to try this extension
 
+### Firefox
+
+You can install this add-on in ["Alarms & Clock"](https://addons.mozilla.org/en-US/firefox/addon/alarms-clock/)
+
+### Google Chrome
+
 This extension is not in the Chrome Web Store, but you can try it.
 
-* [Download package](https://github.com/lmfresneda/chrome-ext-clock-alarm/archive/master.zip) and decompress it.
+* [Download package](https://github.com/lmfresneda/clock-alarm-extension/archive/master.zip) and decompress it.
 * In Google Chrome, go to `chrome://extensions/` page and check `Developer mode`:
 
 ![Developer mode check](res/img/install1.png)
@@ -42,7 +48,7 @@ This extension is not in the Chrome Web Store, but you can try it.
 ![Icon toolbar](res/img/install3.png)
 
 
-## Security
+### Google Chrome security
 
 For our security, Chrome asks us if we want to use this extension, because it's loaded by developer mode:
 
