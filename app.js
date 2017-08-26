@@ -2,9 +2,10 @@
 const $body = $('body');
 const $clock = $('#clock'), $date = $('#date');
 const $inputs = $('.inputs'), $alarms = $('.alarms');
-const $formNewAlarm = $('#new-alarm'), $selHour = $('select[name="hour-config"]'), $selMinutes = $('select[name="minutes-config"]');
+const $formNewAlarm = $('#new-alarm'), $selHour = $('input[name="hour-config"]'), $selMinutes = $('input[name="minutes-config"]');
 const $alarmConfig = $('#alarm-config');
 const $errorFormConfig = $('#error-form-config');
+const $rangeSizeClock = $('#range-size-clock');
 
 // formatos
 const formatTime = 'HH:mm:ss';
@@ -12,26 +13,31 @@ const formatTimeAlarm = 'HH:mm';
 const formatDate = 'ddd, D MMMM YYYY';
 
 // caché colores del body
-const bodyBackColor = '#008348', bodyFontColor = '#E2E2E2';
+var bodyBackColor = '#008348', bodyFontColor = '#E2E2E2';
 
 let countAnimate = 0;
 
-// se llama cada segundo para pintar la hora y para comprobar si hay alarmas que lanzar
+// se llama cada segundo para pintar la hora
 const interClock = setInterval(() => {
 	$clock.html(moment().format(formatTime));
 }, 1000);
 // se llama cada minuto para pintar la fecha
 const interDate = setInterval(() => {
-	const m = moment();
-	$date.html(m.format(formatDate))
-	intervalHour(m);
+	$date.html(moment().format(formatDate))
 }, 1000 * 60);
+// se llama cada 6 segundos para comprobar si hay alarma
+const interAlarm = setInterval(() => {
+	const m = moment();
+	intervalHour(m);
+}, 5000);
 $clock.html(moment().format(formatTime));
 $date.html(moment().format(formatDate));
 
 // comprueba si hay alarmas que lanzar en la fecha recibida
 function intervalHour(dateMoment, test){
 	const hora = dateMoment.format(formatTimeAlarm);
+	const segundos = dateMoment.format(`ss`);
+	if(!test && parseInt(segundos) > 5) return;
 	const alarms = getAlarmsStorage();
 	if(alarms.includes(hora) || test){
 		if(isSound()){
@@ -48,22 +54,20 @@ function intervalHour(dateMoment, test){
 function animateBody(){
 	if(countAnimate >= 5) {
 		countAnimate = 0;
-		$body.animate({
-			backgroundColor: bodyBackColor,
-			color: bodyFontColor
-		}, 500);
+		$body.css('background-color', localStorage.color);
+		$body.css('color', bodyFontColor);
 		return;
 	}
 	countAnimate += 1;
-	$body.animate({
-		backgroundColor: 'red',
-		color: 'white'
-	}, 500, function() {
-		$body.animate({
-			backgroundColor: 'yellow',
-			color: 'black'
-		}, 500, animateBody);
-	});
+	$body.css('background-color', 'red');
+	$body.css('color', 'white');
+	setTimeout(() => {
+		$body.css('background-color', 'yellow');
+		$body.css('color', 'black');
+		setTimeout(() => {
+			animateBody();
+		}, 500);
+	}, 500);
 }
 
 // indica si se debe escuchar el sonido de alarma
@@ -97,13 +101,23 @@ function newAlarm(alarm){
 $formNewAlarm.submit((e) => {
 	e.preventDefault();
 	const hour = $selHour.val(), min = $selMinutes.val();
-	if(hour && min){
-		newAlarm(`${hour}:${min}`);
+	if(hour && min && validaHora(hour) && validaMinuto(min)){
+		newAlarm(`${convertToDigits(hour)}:${convertToDigits(min)}`);
 	}else{
 		$errorFormConfig.show();
 		setTimeout(() => $errorFormConfig.hide(), 1000);
 	}
 });
+function validaHora(hora){
+	if(isNaN(hora)) return false;
+	if(parseInt(hora) > 23 || parseInt(hora) < 0) return false;
+	return true;
+}
+function validaMinuto(minuto){
+	if(isNaN(minuto)) return false;
+	if(parseInt(minuto) > 59 || parseInt(minuto) < 0) return false;
+	return true;
+}
 
 // elimina una alarma al hacer click en ella
 $(document).on('click', '.alarm', function(e) {
@@ -113,19 +127,15 @@ $(document).on('click', '.alarm', function(e) {
 
 // inicializa el formulario de configuración
 function initFormConfig(){
-	// thanks https://stackoverflow.com/a/20066663
-	(Array.apply(null, {length: 24}).map(Number.call, Number)).reverse().forEach(num => {
-		$selHour.append(`<option>${convertToDigits(num)}</option>`);
-	});
-	[45, 30, 15, 0].forEach(num => {
-		$selMinutes.append(`<option>${convertToDigits(num)}</option>`);
-	});
+	
 }
 initFormConfig();
 
-// inicializa el localStorage con un array vacío
+// inicializa el localStorage con un array vacío y el color de fondo
 function initLocalStorage(){
 	if(!localStorage.alarms) localStorage.alarms = "[]";
+	if(!localStorage.color) localStorage.color = "#008348";
+	if(!localStorage.size) localStorage.size = "91";
 }
 initLocalStorage();
 
@@ -150,7 +160,7 @@ function removeAlarmStorage(alarm){
 
 // convierte un número a dos dígitos si es necesario
 function convertToDigits(num){
-	return num < 10 ? `0${num}` : num;
+	return parseInt(num) < 10 ? `0${parseInt(num)}` : parseInt(num);
 }
 
 $('#info-page, #clock, #date, #close-config').click(hideConfig);
@@ -178,8 +188,10 @@ function initLocale(){
 	const minutes = chrome.i18n.getMessage('minutes');
 	const saveNewAlarm = chrome.i18n.getMessage('save_new_alarm');
 	const configNewAlarm = chrome.i18n.getMessage('config_new_alarm');
+	const textConfigNewAlarm = chrome.i18n.getMessage('text_config_new_alarm');
 	const configuredAlarms = chrome.i18n.getMessage('configured_alarms');
 	const errorSaveAlarm = chrome.i18n.getMessage('error_save_alarm');
+	const selectColor = chrome.i18n.getMessage('select_color');
 
 	$('title').html(title);
 	$('#open-config').html(configuration);
@@ -187,9 +199,11 @@ function initLocale(){
 	$('label[for="hour-config"]').html(hour);
 	$('label[for="minutes-config"]').html(minutes);
 	$('input[name="send-alarm"]').val(saveNewAlarm);
-	$('.inputs > p').html(`${configNewAlarm}:`);
-	$('.alarms > p').html(`${configuredAlarms}:`);
+	$('#config-new-alarm').html(`${configNewAlarm}:`);
+	$('#text-config-hour').html(`(${textConfigNewAlarm})`);
+	$('#alarms-configured').html(`${configuredAlarms}:`);
 	$('#error-form-config').html(errorSaveAlarm);
+	$('#select-color').html(`${selectColor}:`);
 }
 initLocale();
 
@@ -231,3 +245,39 @@ function initNotifications(){
     Notification.requestPermission();
 }
 initNotifications();
+
+function initColors(){
+	['#008348', '#01A9DB', '#0000FF', '#B404AE', 
+	'#FF0040', '#FF4000', '#DBA901', '#FA5858',
+	'#688A08', '#B40431', '#424242', '#1C1C1C'].forEach((color) => {
+		$('.colors').append('<div style="background-color: '+ color +'" data-color="'+ color +'"></div>');
+	});
+	selectColor();
+}
+initColors();
+
+function selectColor(){
+	if(localStorage.color){
+		$('.colors > div').removeClass('color-selected');
+		$('*[data-color="'+ localStorage.color +'"]').addClass('color-selected');
+		$body.css('background-color', localStorage.color);
+	}
+}
+$('.colors > div').click(function() {
+	localStorage.color = $(this).data('color');
+	selectColor();
+});
+
+// modifica el size de la fuente del reloj y la fecha
+function resizeFontClock(){
+	const val = parseInt($rangeSizeClock.val());
+	const sizeClock = 23 / 100 * val;
+	const sizeDate = 6 / 100 * val;
+	$clock.css('font-size', sizeClock + 'vw');
+	$date.css('font-size', sizeDate + 'vw');
+	localStorage.size = val;
+}
+$rangeSizeClock.off().change(resizeFontClock);
+$rangeSizeClock.mousemove(resizeFontClock);
+$rangeSizeClock.val(localStorage.size);
+resizeFontClock();

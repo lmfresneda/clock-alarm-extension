@@ -4,45 +4,50 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title></title>
+	<link rel="stylesheet" href="lib/font-awesome.min.css">
 	<link rel="stylesheet" href="app.css">
 </head>
 <body>
 	<div id="alarm-config">
 		<span id="close-config">Cerrar</span>
+		<p id="config-new-alarm">Configurar nueva alarma:</p>
+		<p id="text-config-hour">(Indique hasta 24 horas y 60 minutos)</p>
 		<div class="inputs">
-			<p>Configurar nueva alarma:</p>
 			<form id="new-alarm">
 				<label for="hour-config">Hora</label>
-				<select name="hour-config">
-					<option value=""></option>
-				</select>
+				<input type="number" name="hour-config">
 
 				<label for="minutes-config">Minutos</label>
-				<select name="minutes-config">
-					<option value=""></option>
-				</select>
+				<input type="number" name="minutes-config">
+				
 				<input type="submit" name="send-alarm" value="Guardar nueva alarma">	
-				<p id="error-form-config">Indique hora y minutos</p>
+				<p id="error-form-config">Revise la hora indicada</p>
 
 			</form>
 		</div>
+		<p id="alarms-configured">Alarmas configuradas:</p>
 		<div class="alarms">
-			<p>Alarmas configuradas:</p>
+		</div>
+		<p id="select-color">Elija color:</p>
+		<div class="colors">
 		</div>
 		<button id="test-alarm">Test alarm</button>
 	</div>
 
 	<span id="open-config">Configuración</span>
 
+	<div class="slider-wrapper">
+	  <input type="range" id="range-size-clock" min="1" max="100" value="91" step="1">
+	</div>
+
 	<div class="info-page">
 		<div id="clock"></div>
 		<div id="date"></div>
 	</div>
 
-	<span class="credits">&lt;/&gt; with <i>&#9825;</i> by <a href="https://lmfresneda.github.io" title="lmfresneda.github.io" target="_blank">lmfresneda</a> </span>
+	<span class="credits">&lt;/&gt; with <i>&#9825;</i> by <a href="https://github.com/lmfresneda" title="github.com/lmfresneda" target="_blank">lmfresneda</a> </span>
 
 	<script src="lib/jquery-2.2.4.min.js" type="text/javascript"></script>
-	<script src="lib/jquery.color-2.1.2.min.js" type="text/javascript"></script>
 	<script src="lib/moment.min.js" type="text/javascript"></script>
 	<script src="app.js" type="text/javascript"></script>
 </body>

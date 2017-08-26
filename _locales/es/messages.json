@@ -28,6 +28,9 @@
 	"config_new_alarm": {
 		"message": "Configurar nueva alarma"
 	},
+	"text_config_new_alarm": {
+		"message": "Indique hasta 24 horas y 60 minutos"
+	},
 	"save_new_alarm": {
 		"message": "Guardar nueva alarma"
 	},
@@ -35,7 +38,7 @@
 		"message": "Alarmas configuradas"
 	},
 	"error_save_alarm": {
-		"message": "Indique hora y minutos"
+		"message": "Revise la hora indicada"
 	},
 	"text_sound_alarm": {
 		"message": "Escuchar alarma"
@@ -45,5 +48,8 @@
 	},
 	"text_alarm": {
 		"message": "La alarma configurada para las $1 ha saltado"
+	},
+	"select_color": {
+		"message": "Elija color"
 	}
 }

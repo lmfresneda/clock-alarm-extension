@@ -31,11 +31,14 @@
 	"config_new_alarm": {
 		"message": "Config new alarm"
 	},
+	"text_config_new_alarm": {
+		"message": "Enter up to 24 hours and 60 minutes"
+	},
 	"configured_alarms": {
 		"message": "Configured Alarms"
 	},
 	"error_save_alarm": {
-		"message": "Enter hour and minutes"
+		"message": "Check the indicated time"
 	},
 	"text_sound_alarm": {
 		"message": "Listen to alarm"
@@ -45,5 +48,8 @@
 	},
 	"text_alarm": {
 		"message": "The alarm set at $1 has been fired"
+	},
+	"select_color": {
+		"message": "Select color"
 	}
 }

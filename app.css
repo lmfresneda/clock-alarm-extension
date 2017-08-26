@@ -2,10 +2,10 @@
 
 body{
     font-family: 'Lato', sans-serif;
-	background-color: #008348;
 	margin: 0px;
 	padding: 0px;
 	color: #E2E2E2;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
 #alarm-config{
@@ -50,38 +50,41 @@ input[name=send-alarm]{
     padding: 5px;
     margin: 20px;
     cursor: pointer;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+
 }
 input[name=send-alarm]:hover{
     background-color: #ff7600;
     color: white;
 }
-#new-alarm select{
+#new-alarm input[type=number]{
     border: 1px solid #ff7600;
     background-color: transparent;
     border-radius: 3px;
     padding: 5px;
-    cursor: pointer;
+    max-width: 55px;
 }
-.inputs, .alarms{
-    margin: 5px 10px;
-}
-.inputs > p, .alarms > p{
-	font-size: 1.2rem;
+#alarm-config > p{
+    margin: 25px 10px 0px 10px;
+    font-size: 1.2rem;
 }
 
-#info-page{
+.info-page{
     position: absolute;
-    width: 100%;
-    top: 10%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
+
 #clock, #date{
 	text-align: center;
 }
 #clock{
-	font-size: 23vw;
+	font-size: 20.9vw;
 }
 #date{
-	font-size: 6vw;
+	font-size: 5.45vw;
 }
 
 .alarm{
@@ -90,10 +93,21 @@ input[name=send-alarm]:hover{
     border-radius: 2px;
     padding: 3px;
     margin: 2px 4px;
+    transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 .alarm:hover{
 	background-color: #ff7600;
 	color: white;
+}
+
+.alarms {
+    margin: 10px;
+}
+
+#text-config-hour{
+    font-size: .8rem !important;
+    opacity: .8;
+    margin-top: 3px !important;
 }
 
 #error-form-config{
@@ -131,6 +145,74 @@ input[name=send-alarm]:hover{
     font-size: 1rem;
     vertical-align: sub;
     font-style: normal;
+}
+
+.slider-wrapper {
+    display: inline-block;
+    width: 20px;
+    height: 150px;
+    padding: 0;
+    position: fixed;
+    right: 10px;
+    top: 15px;
+    background-color: white;
+    opacity: 0.2;
+    border-radius: 3px;
+    padding: 3px;
+}
+.slider-wrapper:hover {
+    opacity: 1;
+}
+.slider-wrapper input {
+    width: 150px;
+    height: 20px;
+    margin: 0;
+    transform-origin: 75px 75px;
+    transform: rotate(-90deg);
+}
+input[type=range]::-moz-range-thumb {
+    box-shadow: -1px -1px 1px #000;
+    border: 1px solid #575757;
+    height: 16px;
+    width: 16px;
+    border-radius: 50px;
+    background: #e6e6e6;
+    cursor: pointer;
+}
+
+.colors{
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.colors > div{
+    height: 50px;
+    width: 50px;
+    float: left;
+    margin: 8px;
+    border-radius: 3px;
+    cursor: pointer;
+    flex: 11 1 15%;
+}
+.colors > div:hover{
+    opacity: .8;
+}
+.color-selected{
+    text-align: center;
+}
+.color-selected:before{
+    content: "\f00c";
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 14px;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: white;
+    font-size: 2rem;
+    opacity: .6;
+    margin-top: 6px;
 }
 
 /* switch */

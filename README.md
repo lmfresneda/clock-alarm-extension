@@ -1,14 +1,14 @@
-# Firefox and Google Chrome and extension
+# Firefox and Google Chrome extension
 
-## Displays a large clock in default new tab and can set alarms (with sound, if you want)
+## Displays a large (customizable) clock in default new tab and can set alarms (with sound, if you want)
 
 * View default:
 
 ![Default view](res/img/example1.png)
 
-* Alarms configuration view:
+* Configuration view:
 
-![Alarms configuration view](res/img/example2.png)
+![Configuration view](res/img/example2.png)
 
 * Sound configuration view:
 
