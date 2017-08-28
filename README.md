@@ -1,6 +1,6 @@
 # Firefox and Google Chrome extension
 
-## Displays a large (customizable) clock in default new tab and can set alarms (with sound, if you want)
+## Displays a large (customizable) clock in default new tab and can set alarms (with sound, if you want) that is fired **inclusive when this tab is closed**. In addition, it allows to open a url in a new tab when the alarm is fired.
 
 * View default:
 
@@ -19,7 +19,7 @@
 ![Red color. Alarm fired view](res/img/example4.png)
 ![Yellow color. Alarm fired view](res/img/example5.png)
 
-* The red and yellow colors is alternate each second.
+* The red and yellow colors is alternate each second, during five seconds.
 * The alarm sound is heard for five seconds.
 * The notification is seen for five seconds. If you click on it, it will hide.
 

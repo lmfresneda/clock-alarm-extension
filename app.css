@@ -57,12 +57,17 @@ input[name=send-alarm]:hover{
     background-color: #ff7600;
     color: white;
 }
-#new-alarm input[type=number]{
+#new-alarm input[type=number],
+#new-alarm input[type=text]{
     border: 1px solid #ff7600;
     background-color: transparent;
     border-radius: 3px;
     padding: 5px;
     max-width: 55px;
+}
+input[name="url-config"]{
+    min-width: 77%;
+    margin-top: 10px;
 }
 #alarm-config > p{
     margin: 25px 10px 0px 10px;
@@ -110,7 +115,7 @@ input[name=send-alarm]:hover{
     margin-top: 3px !important;
 }
 
-#error-form-config{
+#error-form-config, #error-url-config{
 	display: none;
 	color: #FF3800;
 }

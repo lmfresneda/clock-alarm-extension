@@ -4,7 +4,7 @@
         "description": "Nombre"
     },
 	"extDesc" : {
-        "message": "Visualiza un reloj grande y puede definir alarmas",
+        "message": "Visualiza un reloj grande y puede definir alarmas que son disparadas incluso con la pestaña cerrada",
         "description": "Descripción"
     },
     "title_alarm_remove" : {
@@ -51,5 +51,8 @@
 	},
 	"select_color": {
 		"message": "Elija color"
+	},
+	"placeholder_url_input": {
+		"message": "Se abrirá al saltar la alarma"
 	}
 }

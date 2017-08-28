@@ -17,3 +17,4 @@ $('#sound-switch').off().click(function(){
 });
 
 $('#sound-switch').prop('checked', localStorage.sound == 'true');
+

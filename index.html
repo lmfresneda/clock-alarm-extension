@@ -19,9 +19,13 @@
 
 				<label for="minutes-config">Minutos</label>
 				<input type="number" name="minutes-config">
+
+				<label for="url-config">Url</label>
+				<input type="text" name="url-config" placeholder="Se abrirá al saltar la alarma">
 				
 				<input type="submit" name="send-alarm" value="Guardar nueva alarma">	
 				<p id="error-form-config">Revise la hora indicada</p>
+				<p id="error-url-config">La url no es correcta</p>
 
 			</form>
 		</div>
@@ -49,6 +53,9 @@
 
 	<script src="lib/jquery-2.2.4.min.js" type="text/javascript"></script>
 	<script src="lib/moment.min.js" type="text/javascript"></script>
+	<script src="utils.js" type="text/javascript"></script>
+	<script src="storage.js" type="text/javascript"></script>
+	<script src="notification.js" type="text/javascript"></script>
 	<script src="app.js" type="text/javascript"></script>
 </body>
 </html>

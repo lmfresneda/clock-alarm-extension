@@ -4,7 +4,7 @@
         "description": "Extension name"
     },
 	"extDesc" : {
-        "message": "Displays a large clock and can set alarms",
+        "message": "Displays a large clock and can set alarms that is fired inclusive when tab is closed",
         "description": "Extension description"
     },
     "title_alarm_remove" : {
@@ -51,5 +51,8 @@
 	},
 	"select_color": {
 		"message": "Select color"
+	},
+	"placeholder_url_input": {
+		"message": "Will open when alarm is fired"
 	}
 }
